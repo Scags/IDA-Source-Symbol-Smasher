@@ -67,7 +67,7 @@ def makesig(func):
 		if not done: 	# Unknown, just wildcard addresses
 			i = 0
 			size = idc.get_item_size(addr)
-			for i in xrange(size):
+			while 1:	# Screw u python
 				loc = addr + i
 				if ((idc.get_fixup_target_type(loc) & 0x0F) == ida_fixup.FIXUP_OFF32):
 					sig = sig + print_wildcards(4)
@@ -75,10 +75,15 @@ def makesig(func):
 				else:
 					sig = sig + ("%02X " % idc.get_wide_byte(loc))
 
+				i = i + 1
+
+				if i >= size:
+					break
+
 		# Escape the evil functions that break everything
 		if len(sig) > MAX_SIG_LENGTH:
 			return "Signature is too long!"
-		# Save milliseconds and only check for good sigs after 8 bytes
+		# Save milliseconds and only check for good sigs after a fewish bytes
 		# Trust me, it matters
 		elif len(sig) > 8 and is_good_sig(sig):
 			found = 1
