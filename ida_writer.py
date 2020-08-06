@@ -56,6 +56,7 @@ def makesig(func):
 		if info is None:
 			return None
 
+		done = 0
 		if len(info.ops) == 1:
 			if info.ops[0].type == ida_ua.o_near or info.ops[0].type == ida_ua.o_far:
 				if hex(idc.get_wide_byte(addr)) == 0x0F: 	# Two-byte instruction
