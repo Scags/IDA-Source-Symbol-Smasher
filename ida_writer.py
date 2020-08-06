@@ -7,6 +7,8 @@ import ida_kernwin
 import ida_ua
 import ida_fixup
 
+MAX_SIG_LENGTH = 512
+
 def get_dt_size(dtype):
 	if dtype == idc.dt_byte:
 		return 1
@@ -46,6 +48,7 @@ def makesig(func):
 	funcstart = func.start_ea
 	funcend = func.end_ea
 	done = 0
+	global MAX_SIG_LENGTH
 
 	addr = funcstart
 	while addr != idc.BADADDR:
@@ -73,7 +76,7 @@ def makesig(func):
 					sig = sig + ("%02X " % idc.get_wide_byte(loc))
 
 		# Escape the evil functions that break everything
-		if len(sig) > 127:
+		if len(sig) > MAX_SIG_LENGTH:
 			return "Signature is too long!"
 		# Save milliseconds and only check for good sigs after 8 bytes
 		# Trust me, it matters
@@ -132,13 +135,16 @@ def main():
 			func = ida_funcs.get_func(xref.frm)
 			funcname = ida_funcs.get_func_name(xref.frm)
 
+			# Can have into multiple run-ins with the same function, might see a lot of Precache copies
+			# Can uncomment that if you want, it's mainly there so u can dump without having to analyze a Windows bin
+			# all over again
 			if funcname is None:# or not funcname.startswith("sub_"):
 				continue
 
 			# Gotta love python 2
 			key, mangled = node.items()[0]
 			dump[key] = {}
-			dump[key]["sub"] = funcname
+#			dump[key]["sub"] = funcname		# Don't need me do we?
 			dump[key]["mangled"] = mangled
 			dump[key]["func"] = func		# Nuke me later
 
@@ -160,8 +166,6 @@ def main():
 
 					count = count + 1
 					print("Evaluated {} out of {} ({}%)".format(count, numitems, round(count / float(numitems) * 100.0, 1)))
-					if count > 50:
-						break
 			except KeyboardInterrupt:	# Eh, this doesn't do anything. Once you start, there's no going back
 				print("Abandoning everything and dumping current data")
 
