@@ -22,8 +22,7 @@ AddSurfacepropFile(char const*,IPhysicsSurfaceProps *,IFileSystem *):
 AnalysisProgress(char const*,int,int,bool) [clone]:
   mangled: _ZL16AnalysisProgressPKciib.constprop.419
   signature: \x55\x8B\xEC\x51\x56\x57\xFF\x15\x2A\x2A\x2A\x2A
-? BAddLootlistJobFromTemplates(char const*,CUtlVector<CLootlistJob *,CUtlMemory<CLootlistJob
-  *,int>> &,KeyValues *,CEconItemSchema const*,CUtlVector*<CUtlString,CUtlMemory<CUtlVector*,int>>)
+? BAddLootlistJobFromTemplates(char const*,CUtlVector<CLootlistJob *,CUtlMemory<CLootlistJob *,int>> &,KeyValues *,CEconItemSchema const*,CUtlVector*<CUtlString,CUtlMemory<CUtlVector*,int>>)
 : mangled: _Z28BAddLootlistJobFromTemplatesPKcR10CUtlVectorIP12CLootlistJob10CUtlMemoryIS3_iEEP9KeyValuesPK15CEconItemSchemaPS1_I10CUtlStringS4_ISD_iEE
   signature: \x55\x8B\xEC\x81\xEC\x14\x01\x00\x00\x56\x8B\x75\x10
 BeginRestoreEntities(void):
@@ -1178,8 +1177,7 @@ CBasePropDoor::Spawn(void):
 CBasePropDoor::Unlock(void):
   mangled: _ZN13CBasePropDoor6UnlockEv
   signature: \x56\x8B\xF1\x83\xBE\x50\x06\x00\x00\x00
-? CBaseQuestObjectiveTracker::CBaseQuestObjectiveTracker(QuestObjectiveInstance_t
-  const&,CQuestItemTracker *,CSteamID const&)
+? CBaseQuestObjectiveTracker::CBaseQuestObjectiveTracker(QuestObjectiveInstance_t const&,CQuestItemTracker *,CSteamID const&)
 : mangled: _ZN26CBaseQuestObjectiveTrackerC2ERK24QuestObjectiveInstance_tP17CQuestItemTrackerRK8CSteamID
   signature: \x55\x8B\xEC\x81\xEC\x18\x01\x00\x00\x53\x56\x8B\xF1\x57\x89\x75\xFC
 CBaseQuestObjectiveTracker::GetConditionName(void):
@@ -1626,8 +1624,7 @@ CEconItemDefinition::GetIconDisplayModel(void):
 CEconItemQualityDefinition::BInitFromKV(KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *):
   mangled: _ZN26CEconItemQualityDefinition11BInitFromKVEP9KeyValuesP10CUtlVectorI10CUtlString10CUtlMemoryIS3_iEE
   signature: \x55\x8B\xEC\x53\x56\x57\x8B\x7D\x08\x8B\xD9\x6A\xFF
-? CEconItemRarityDefinition::BInitFromKV(KeyValues *,KeyValues *,CEconItemSchema &,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>>
-  *)
+? CEconItemRarityDefinition::BInitFromKV(KeyValues *,KeyValues *,CEconItemSchema &,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
 : mangled: _ZN25CEconItemRarityDefinition11BInitFromKVEP9KeyValuesS1_R15CEconItemSchemaP10CUtlVectorI10CUtlString10CUtlMemoryIS5_iEE
   signature: \x55\x8B\xEC\x56\x57\x8B\x7D\x08\x8B\xF1\x6A\xFF\x68\x2A\x2A\x2A\x2A\x8B\xCF\xE8\x38\x97\x32\x00
 CEconItemSchema::AssignDefaultBodygroupState(char const*,int):
@@ -1714,9 +1711,7 @@ CEconItemSchema::BInitStringTables(KeyValues *,CUtlVector<CUtlString,CUtlMemory<
 CEconItemSchema::BInsertLootlist(char const*,KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *):
   mangled: _ZN15CEconItemSchema15BInsertLootlistEPKcP9KeyValuesP10CUtlVectorI10CUtlString10CUtlMemoryIS5_iEE
   signature: \x55\x8B\xEC\x56\x8B\x75\x08\x57\x8B\xF9\x85\xF6\x75\x37
-? CEconItemSchema::BRecurseiveVerifyLootListItemDropDates(CEconLootListDefinition
-  const*,CEconLootListDefinition const*,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>>
-  *)
+? CEconItemSchema::BRecurseiveVerifyLootListItemDropDates(CEconLootListDefinition const*,CEconLootListDefinition const*,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
 : mangled: _ZNK15CEconItemSchema38BRecurseiveVerifyLootListItemDropDatesEPK23CEconLootListDefinitionS2_P10CUtlVectorI10CUtlString10CUtlMemoryIS4_iEE
   signature: \x55\x8B\xEC\x83\xEC\x3C\x8B\x45\x08
 CEconItemSchema::BVerifyBaseItemNames(CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *):
@@ -1761,33 +1756,25 @@ CEconTool_GiftWrap::CEconTool_GiftWrap(char const*,char const*,item_capabilities
 CEconTool_GiftWrap::CanApplyTo(IEconItemInterface const*,IEconItemInterface const*):
   mangled: _ZNK18CEconTool_GiftWrap10CanApplyToEPK18IEconItemInterfaceS2_
   signature: \x55\x8B\xEC\x56\x8B\x75\x0C\x8B\xCE\x8B\x06\xFF\x50\x24
-? CEconTool_ItemDynamicRecipe::CBaseRecipeComponent::ParseComponents(KeyValues *,CUtlVector<CEconTool_ItemDynamicRecipe::CBaseRecipeComponent*,CUtlMemory<CEconTool_ItemDynamicRecipe::CBaseRecipeComponent*,int>>
-  &,bool,CUtlVector*<CUtlString,CUtlMemory<CUtlVector*,int>>,CEconTool_ItemDynamicRecipe::CBaseRecipeComponent
-  const*)
+? CEconTool_ItemDynamicRecipe::CBaseRecipeComponent::ParseComponents(KeyValues *,CUtlVector<CEconTool_ItemDynamicRecipe::CBaseRecipeComponent*,CUtlMemory<CEconTool_ItemDynamicRecipe::CBaseRecipeComponent*,int>> &,bool,CUtlVector*<CUtlString,CUtlMemory<CUtlVector*,int>>,CEconTool_ItemDynamicRecipe::CBaseRecipeComponent const*)
 : mangled: _ZN27CEconTool_ItemDynamicRecipe20CBaseRecipeComponent15ParseComponentsEP9KeyValuesR10CUtlVectorIPS0_10CUtlMemoryIS4_iEEbPS3_I10CUtlStringS5_IS9_iEEPKS0_
   signature: \x55\x8B\xEC\x8B\x45\x08\x53\x56\x57\x8B\x78\x18\x85\xFF
-? CEconTool_ItemDynamicRecipe::CBaseRecipeComponent::ParseKV(KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>>
-  *)
+? CEconTool_ItemDynamicRecipe::CBaseRecipeComponent::ParseKV(KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
 : mangled: _ZN27CEconTool_ItemDynamicRecipe20CBaseRecipeComponent7ParseKVEP9KeyValuesP10CUtlVectorI10CUtlString10CUtlMemoryIS4_iEE
   signature: \x55\x8B\xEC\x83\xEC\x30\x56\x57\x8B\xF1
-? CEconTool_ItemDynamicRecipe::CDynamicRecipeComponentDefinedItem::BFinishInitialization_Internal(CUtlVector<CUtlString,CUtlMemory<CUtlString,int>>
-  *,CUtlVector*<CEconItemAttributeDefinition const*,CUtlMemory<CEconItemAttributeDefinition
-  const,int>>)
+? CEconTool_ItemDynamicRecipe::CDynamicRecipeComponentDefinedItem::BFinishInitialization_Internal(CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *,CUtlVector*<CEconItemAttributeDefinition const*,CUtlMemory<CEconItemAttributeDefinition const,int>>)
 : mangled: _ZN27CEconTool_ItemDynamicRecipe34CDynamicRecipeComponentDefinedItem30BFinishInitialization_InternalEP10CUtlVectorI10CUtlString10CUtlMemoryIS2_iEEPS1_IPK28CEconItemAttributeDefinitionS3_IS9_iEE
   signature: \x55\x8B\xEC\x53\x56\x57\x8B\xF9\x32\xDB
-? CEconTool_ItemDynamicRecipe::CDynamicRecipeComponentDefinedItem::ParseKV(KeyValues
-  *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
+? CEconTool_ItemDynamicRecipe::CDynamicRecipeComponentDefinedItem::ParseKV(KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
 : mangled: _ZN27CEconTool_ItemDynamicRecipe34CDynamicRecipeComponentDefinedItem7ParseKVEP9KeyValuesP10CUtlVectorI10CUtlString10CUtlMemoryIS4_iEE
   signature: \x55\x8B\xEC\x53\x56\x8B\x75\x08\x57\x6A\x00
-? CEconTool_ItemDynamicRecipe::CDynamicRecipeComponentLootList::ParseKV(KeyValues
-  *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
+? CEconTool_ItemDynamicRecipe::CDynamicRecipeComponentLootList::ParseKV(KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
 : mangled: _ZN27CEconTool_ItemDynamicRecipe31CDynamicRecipeComponentLootList7ParseKVEP9KeyValuesP10CUtlVectorI10CUtlString10CUtlMemoryIS4_iEE
   signature: \x55\x8B\xEC\x57\x68\x2A\x2A\x2A\x2A\x8B\xF9\x8B\x4D\x08\x68\x2A\x2A\x2A\x2A\xE8\x78\x6F\x31\x00
 CEconTool_StrangePart::CEconTool_StrangePart(char const*,char const*,item_capabilities_t,KeyValues *):
   mangled: _ZN21CEconTool_StrangePartC2EPKcS1_19item_capabilities_tP9KeyValues
   signature: \x55\x8B\xEC\x8B\x45\x08\x56\x8B\xF1\x57\x8B\x7D\x14\x89\x46\x04\x8B\x45\x0C\x89\x46\x08\x8B\x45\x10\xC7\x46\x0C\x00\x00\x00\x00\x89\x46\x10\xC7\x06\x2A\x2A\x2A\x2A\x85\xFF\x74\x10\x6A\x00\x68\x2A\x2A\x2A\x2A\x8B\xCF\xE8\x75\x26\x33\x00
-? CEconTool_StrangePartRestriction::CEconTool_StrangePartRestriction(char const*,char
-  const*,item_capabilities_t,KeyValues *)
+? CEconTool_StrangePartRestriction::CEconTool_StrangePartRestriction(char const*,char const*,item_capabilities_t,KeyValues *)
 : mangled: _ZN32CEconTool_StrangePartRestrictionC2EPKcS1_19item_capabilities_tP9KeyValues
   signature: \x55\x8B\xEC\x8B\x45\x08\x56\x8B\xF1\x8B\x4D\x14\x6A\x00
 CEconTool_WrappedGift::CEconTool_WrappedGift(char const*,char const*,item_capabilities_t,KeyValues *):
@@ -1874,8 +1861,7 @@ CEnvGlobal::DrawDebugTextOverlays(void):
 CEnvMicrophone::ActivateSpeaker(void):
   mangled: _ZN14CEnvMicrophone15ActivateSpeakerEv
   signature: \x55\x8B\xEC\x83\xEC\x08\x56\x8B\xF1\x80\xBE\x58\x03\x00\x00\x00
-? CEnvMicrophone::SoundPlayed(int,char const*,soundlevel_t,float,int,int,Vector const*,float,CUtlVector<Vector,CUtlMemory<Vector,int>>
-  &)
+? CEnvMicrophone::SoundPlayed(int,char const*,soundlevel_t,float,int,int,Vector const*,float,CUtlVector<Vector,CUtlMemory<Vector,int>> &)
 : mangled: _ZN14CEnvMicrophone11SoundPlayedEiPKc12soundlevel_tfiiPK6VectorfR10CUtlVectorIS3_10CUtlMemoryIS3_iEE
   signature: \x55\x8B\xEC\x83\xEC\x6C\x57\x8B\xF9\x89\x7D\xFC
 CEnvParticleScript::PrecacheAnimationEventMaterials(void):
@@ -2424,8 +2410,7 @@ CLogicNavigation::KeyValue(char const*,char const*):
 CLootlistJob::AddRandomAtrributes(KeyValues *,CEconItemSchema &,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *):
   mangled: _ZN12CLootlistJob19AddRandomAtrributesEP9KeyValuesR15CEconItemSchemaP10CUtlVectorI10CUtlString10CUtlMemoryIS5_iEE
   signature: \x55\x8B\xEC\x81\xEC\x14\x01\x00\x00\x53\x8B\xD9\x8B\x4D\x08\x57\xE8\x4B\xF4\x32\x00
-? CLootlistJob::AddRandomAttributesFromTemplates(KeyValues *,CEconItemSchema &,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>>
-  *)
+? CLootlistJob::AddRandomAttributesFromTemplates(KeyValues *,CEconItemSchema &,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
 : mangled: _ZN12CLootlistJob32AddRandomAttributesFromTemplatesEP9KeyValuesR15CEconItemSchemaP10CUtlVectorI10CUtlString10CUtlMemoryIS5_iEE
   signature: \x55\x8B\xEC\x81\xEC\x14\x01\x00\x00\x53\x56\x8B\xD9
 CLootlistJob::BInitFromKV(char const*,KeyValues *,CEconItemSchema &,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *):
@@ -2896,9 +2881,7 @@ CParticleSystem::Precache(void):
 CParticleSystem::ReadControlPointEnts(void):
   mangled: _ZN15CParticleSystem20ReadControlPointEntsEv
   signature: \x55\x8B\xEC\x83\xEC\x14\x53\x56\x8B\xF1\xB8\x94\xFC\xFF\xFF
-? CParticleSystemDefinition::ParseOperators(char const*,ParticleFunctionType_t,CDmxElement
-  *,CUtlVector<CParticleOperatorInstance *,CUtlMemory<CParticleOperatorInstance *,int>>
-  &)
+? CParticleSystemDefinition::ParseOperators(char const*,ParticleFunctionType_t,CDmxElement *,CUtlVector<CParticleOperatorInstance *,CUtlMemory<CParticleOperatorInstance *,int>> &)
 : mangled: _ZN25CParticleSystemDefinition14ParseOperatorsEPKc22ParticleFunctionType_tP11CDmxElementR10CUtlVectorIP25CParticleOperatorInstance10CUtlMemoryIS7_iEE
   signature: \x55\x8B\xEC\x83\xEC\x18\xFF\x75\x08
 CParticleSystemDefinition::Precache(void) [clone]:
@@ -3513,8 +3496,7 @@ CServerGameClients::ProcessUsercmds(edict_t *,bf_read *,int,int,int,bool,bool):
 CServerGameDLL::CreateNetworkStringTables(void):
   mangled: _ZN14CServerGameDLL25CreateNetworkStringTablesEv
   signature: \x8B\x0D\x2A\x2A\x2A\x2A\x6A\x00\x6A\x00\x68\x00\x10\x00\x00
-? CServerGameDLL::DLLInit(void * (*)(char const*,int *),void * (*)(char const*,int
-  *),void * (*)(char const*,int *),CGlobalVars *)
+? CServerGameDLL::DLLInit(void * (*)(char const*,int *),void * (*)(char const*,int *),void * (*)(char const*,int *),CGlobalVars *)
 : mangled: _ZN14CServerGameDLL7DLLInitEPFPvPKcPiES5_S5_P11CGlobalVars
   signature: \x55\x8B\xEC\x83\xEC\x0C\x8D\x45\x08\x6A\x01
 CServerGameDLL::DLLShutdown(void):
@@ -4156,8 +4138,7 @@ CTFCompoundBow::Precache(void):
 CTFConditionQuestCondition::BInitFromKV(KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *):
   mangled: _ZN26CTFConditionQuestCondition11BInitFromKVEP9KeyValuesP10CUtlVectorI10CUtlString10CUtlMemoryIS3_iEE
   signature: \x55\x8B\xEC\x81\xEC\x0C\x01\x00\x00\x56\x8B\x75\x08\x57\x6A\x00\x8B\xF9\x8B\xCE\x68\x2A\x2A\x2A\x2A\xE8\x02\x2F\x30\x00
-? CTFCraftingRecipeDefinition::ItemListMatchesInputs(CUtlVector<CEconItem *,CUtlMemory<CEconItem
-  *,int>> *,KeyValues *,bool,CUtlVector*<ulong long,CUtlMemory<ulong long,int>>)
+? CTFCraftingRecipeDefinition::ItemListMatchesInputs(CUtlVector<CEconItem *,CUtlMemory<CEconItem *,int>> *,KeyValues *,bool,CUtlVector*<ulong long,CUtlMemory<ulong long,int>>)
 : mangled: _ZNK27CTFCraftingRecipeDefinition21ItemListMatchesInputsEP10CUtlVectorIP9CEconItem10CUtlMemoryIS2_iEEP9KeyValuesbPS0_IyS3_IyiEE
   signature: \x55\x8B\xEC\x83\xEC\x50\x53\x56\x57\x8B\x7D\x08\x33\xDB
 CTFDefendPointMission::CTFDefendPointMission(CTeamControlPoint *):
@@ -5864,8 +5845,7 @@ CVoteControllerSystem::FrameUpdatePostEntityThink(void):
 CWarDefinition::BInitFromKV(KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *):
   mangled: _ZN14CWarDefinition11BInitFromKVEP9KeyValuesP10CUtlVectorI10CUtlString10CUtlMemoryIS3_iEE
   signature: \x55\x8B\xEC\x51\x53\x57\x8B\x7D\x08\x8B\xD9\x8B\xCF
-? CWarDefinition::CWarSideDefinition_t::BInitFromKV(char const*,KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>>
-  *)
+? CWarDefinition::CWarSideDefinition_t::BInitFromKV(char const*,KeyValues *,CUtlVector<CUtlString,CUtlMemory<CUtlString,int>> *)
 : mangled: _ZN14CWarDefinition20CWarSideDefinition_t11BInitFromKVEPKcP9KeyValuesP10CUtlVectorI10CUtlString10CUtlMemoryIS6_iEE
   signature: \x55\x8B\xEC\x56\x8B\x75\x0C\x57\x8B\xF9\x8B\xCE\xE8\xEF\xF8\x2F\x00
 CWave::Parse(KeyValues *):
@@ -6099,8 +6079,7 @@ CryptoPP::InvalidKeyLength::InvalidKeyLength(std::string const&,uint):
 CryptoPP::MontgomeryRepresentation::MontgomeryRepresentation(CryptoPP::Integer const&):
   mangled: _ZN8CryptoPP24MontgomeryRepresentationC2ERKNS_7IntegerE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x50\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56
-? CryptoPP::NameValuePairs::ValueTypeMismatch::ValueTypeMismatch(std::string const&,std::type_info
-  const&,std::type_info const&)
+? CryptoPP::NameValuePairs::ValueTypeMismatch::ValueTypeMismatch(std::string const&,std::type_info const&,std::type_info const&)
 : mangled: _ZN8CryptoPP14NameValuePairs17ValueTypeMismatchC2ERKSsRKSt9type_infoS6_
   signature: \x55\x8B\xEC\x81\xEC\x94\x00\x00\x00\x8B\x45\x10
 CryptoPP::OS_RNG_Err::OS_RNG_Err(std::string const&):
@@ -6367,8 +6346,7 @@ KeyValues::LoadFromBuffer(char const*,char const*,IBaseFileSystem *,char const*)
 KeyValues::LoadFromFile(IBaseFileSystem *,char const*,char const*,bool):
   mangled: _ZN9KeyValues12LoadFromFileEP15IBaseFileSystemPKcS3_b
   signature: \x55\x8B\xEC\x83\xEC\x3C\xA1\x2A\x2A\x2A\x2A\x53\x33\xDB
-? KeyValues::ParseIncludedKeys(char const*,char const*,IBaseFileSystem *,char const*,CUtlVector<KeyValues*,CUtlMemory<KeyValues*,int>>
-  &)
+? KeyValues::ParseIncludedKeys(char const*,char const*,IBaseFileSystem *,char const*,CUtlVector<KeyValues*,CUtlMemory<KeyValues*,int>> &)
 : mangled: _ZN9KeyValues17ParseIncludedKeysEPKcS1_P15IBaseFileSystemS1_R10CUtlVectorIPS_10CUtlMemoryIS5_iEE
   signature: \x55\x8B\xEC\x81\xEC\x04\x02\x00\x00\x57
 KeyValues::ReadToken(CUtlBuffer &,bool &,bool &):
@@ -6635,8 +6613,7 @@ Scene_Printf(char const*,...):
 SendPlayerToTheUnderworld(CTFPlayer *,char const*):
   mangled: _Z25SendPlayerToTheUnderworldP9CTFPlayerPKc
   signature: \x55\x8B\xEC\x81\xEC\xDC\x00\x00\x00\x83\x7D\x08\x00
-? SendPropUtlVector(char *,int,int,void (*)(void *,int,int),int,SendProp,void * (*)(SendProp
-  const*,void const*,void const*,CSendProxyRecipients *,int))
+? SendPropUtlVector(char *,int,int,void (*)(void *,int,int),int,SendProp,void * (*)(SendProp const*,void const*,void const*,CSendProxyRecipients *,int))
 : mangled: _Z17SendPropUtlVectorPciiPFvPviiEi8SendPropPFS0_PKS3_PKvS7_P20CSendProxyRecipientsiE
   signature: \x55\x8B\xEC\x83\xEC\x50\x53\x8B\x5D\x08\x8B\xCB
 SendVoteResponseToGC(bool):
@@ -7242,8 +7219,7 @@ V_MakeAbsolutePath(char *,int,char const*,char const*):
 V_pretifymem(float,int,bool):
   mangled: _Z12V_pretifymemfib
   signature: \x55\x8B\xEC\x83\xEC\x4C\x80\x7D\x10\x00
-? ValidateKeysAreSubset(KeyValues *,CUtlVector<char const*,CUtlMemory<char const*,int>>
-  const&,CUtlVector*<CUtlString,CUtlMemory<CUtlVector*,int>>)
+? ValidateKeysAreSubset(KeyValues *,CUtlVector<char const*,CUtlMemory<char const*,int>> const&,CUtlVector*<CUtlString,CUtlMemory<CUtlVector*,int>>)
 : mangled: _ZL21ValidateKeysAreSubsetP9KeyValuesRK10CUtlVectorIPKc10CUtlMemoryIS3_iEEPS1_I10CUtlStringS4_IS9_iEE
   signature: \x55\x8B\xEC\x81\xEC\x14\x01\x00\x00\x57
 WaveTrace(char const*,char const*):
@@ -8767,87 +8743,64 @@ google::protobuf::CEscapeInternal(char const*,int,char *,int,bool,bool):
 google::protobuf::Descriptor::DebugString(int,std::string *):
   mangled: _ZNK6google8protobuf10Descriptor11DebugStringEiPSs
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xCC\x01\x00\x00
-? google::protobuf::DescriptorBuilder::AddError(std::string const&,google::protobuf::Message
-  const&,google::protobuf::DescriptorPool::ErrorCollector::ErrorLocation,std::string
-  const&)
+? google::protobuf::DescriptorBuilder::AddError(std::string const&,google::protobuf::Message const&,google::protobuf::DescriptorPool::ErrorCollector::ErrorLocation,std::string const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder8AddErrorERKSsRKNS0_7MessageENS0_14DescriptorPool14ErrorCollector13ErrorLocationES3_
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x50\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF1
 google::protobuf::DescriptorBuilder::AddImportError(google::protobuf::FileDescriptorProto const&,int):
   mangled: _ZN6google8protobuf17DescriptorBuilder14AddImportErrorERKNS0_19FileDescriptorProtoEi
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x50\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF9\x8B\x75\x08\x8B\x4D\x0C
-? google::protobuf::DescriptorBuilder::AddNotDefinedError(std::string const&,google::protobuf::Message
-  const&,google::protobuf::DescriptorPool::ErrorCollector::ErrorLocation,std::string
-  const&)
+? google::protobuf::DescriptorBuilder::AddNotDefinedError(std::string const&,google::protobuf::Message const&,google::protobuf::DescriptorPool::ErrorCollector::ErrorLocation,std::string const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder18AddNotDefinedErrorERKSsRKNS0_7MessageENS0_14DescriptorPool14ErrorCollector13ErrorLocationES3_
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x2C\x01\x00\x00\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF1
-? google::protobuf::DescriptorBuilder::AddPackage(std::string const&,google::protobuf::Message
-  const&,google::protobuf::FileDescriptor const*)
+? google::protobuf::DescriptorBuilder::AddPackage(std::string const&,google::protobuf::Message const&,google::protobuf::FileDescriptor const*)
 : mangled: _ZN6google8protobuf17DescriptorBuilder10AddPackageERKSsRKNS0_7MessageEPKNS0_14FileDescriptorE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x90\x00\x00\x00
 google::protobuf::DescriptorBuilder::AddRecursiveImportError(google::protobuf::FileDescriptorProto const&,int):
   mangled: _ZN6google8protobuf17DescriptorBuilder23AddRecursiveImportErrorERKNS0_19FileDescriptorProtoEi
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x24\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xD9
-? google::protobuf::DescriptorBuilder::AddSymbol(std::string const&,void const*,std::string
-  const&,google::protobuf::Message const&,google::protobuf::`anonymous namespace'::Symbol)
+? google::protobuf::DescriptorBuilder::AddSymbol(std::string const&,void const*,std::string const&,google::protobuf::Message const&,google::protobuf::`anonymous namespace'::Symbol)
 : mangled: _ZN6google8protobuf17DescriptorBuilder9AddSymbolERKSsPKvS3_RKNS0_7MessageENS0_12_GLOBAL__N_16SymbolE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x10\x01\x00\x00
 google::protobuf::DescriptorBuilder::AddTwiceListedError(google::protobuf::FileDescriptorProto const&,int):
   mangled: _ZN6google8protobuf17DescriptorBuilder19AddTwiceListedErrorERKNS0_19FileDescriptorProtoEi
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x38\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56
-? google::protobuf::DescriptorBuilder::AllocateOptions(google::protobuf::FileOptions
-  const&,google::protobuf::FileDescriptor *)
+? google::protobuf::DescriptorBuilder::AllocateOptions(google::protobuf::FileOptions const&,google::protobuf::FileDescriptor *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder15AllocateOptionsERKNS0_11FileOptionsEPNS0_14FileDescriptorE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x1C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xD9\x8B\x7D\x0C
-? google::protobuf::DescriptorBuilder::BuildEnum(google::protobuf::EnumDescriptorProto
-  const&,google::protobuf::Descriptor const*,google::protobuf::EnumDescriptor *)
+? google::protobuf::DescriptorBuilder::BuildEnum(google::protobuf::EnumDescriptorProto const&,google::protobuf::Descriptor const*,google::protobuf::EnumDescriptor *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder9BuildEnumERKNS0_19EnumDescriptorProtoEPKNS0_10DescriptorEPNS0_14EnumDescriptorE
   signature: \x55\x8B\xEC\x83\xEC\x10\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xFC\x8B\x45\x0C
-? google::protobuf::DescriptorBuilder::BuildEnumValue(google::protobuf::EnumValueDescriptorProto
-  const&,google::protobuf::EnumDescriptor const*,google::protobuf::EnumValueDescriptor
-  *)
+? google::protobuf::DescriptorBuilder::BuildEnumValue(google::protobuf::EnumValueDescriptorProto const&,google::protobuf::EnumDescriptor const*,google::protobuf::EnumValueDescriptor *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder14BuildEnumValueERKNS0_24EnumValueDescriptorProtoEPKNS0_14EnumDescriptorEPNS0_19EnumValueDescriptorE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xBC\x00\x00\x00\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xD9
-? google::protobuf::DescriptorBuilder::BuildExtensionRange(google::protobuf::DescriptorProto_ExtensionRange
-  const&,google::protobuf::Descriptor const*,google::protobuf::Descriptor::ExtensionRange
-  *)
+? google::protobuf::DescriptorBuilder::BuildExtensionRange(google::protobuf::DescriptorProto_ExtensionRange const&,google::protobuf::Descriptor const*,google::protobuf::Descriptor::ExtensionRange *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder19BuildExtensionRangeERKNS0_30DescriptorProto_ExtensionRangeEPKNS0_10DescriptorEPNS5_14ExtensionRangeE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x84\x03\x00\x00
-? google::protobuf::DescriptorBuilder::BuildFieldOrExtension(google::protobuf::FieldDescriptorProto
-  const&,google::protobuf::Descriptor const*,google::protobuf::FieldDescriptor *,bool)
+? google::protobuf::DescriptorBuilder::BuildFieldOrExtension(google::protobuf::FieldDescriptorProto const&,google::protobuf::Descriptor const*,google::protobuf::FieldDescriptor *,bool)
 : mangled: _ZN6google8protobuf17DescriptorBuilder21BuildFieldOrExtensionERKNS0_20FieldDescriptorProtoEPKNS0_10DescriptorEPNS0_15FieldDescriptorEb
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xE0\x01\x00\x00
 google::protobuf::DescriptorBuilder::BuildFile(google::protobuf::FileDescriptorProto const&):
   mangled: _ZN6google8protobuf17DescriptorBuilder9BuildFileERKNS0_19FileDescriptorProtoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x9C\x00\x00\x00\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x8D\x64\xFF\xFF\xFF
-? google::protobuf::DescriptorBuilder::BuildMessage(google::protobuf::DescriptorProto
-  const&,google::protobuf::Descriptor const*,google::protobuf::Descriptor*)
+? google::protobuf::DescriptorBuilder::BuildMessage(google::protobuf::DescriptorProto const&,google::protobuf::Descriptor const*,google::protobuf::Descriptor*)
 : mangled: _ZN6google8protobuf17DescriptorBuilder12BuildMessageERKNS0_15DescriptorProtoEPKNS0_10DescriptorEPS5_
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x84\x03\x00\x00
-? google::protobuf::DescriptorBuilder::CrossLinkField(google::protobuf::FieldDescriptor
-  *,google::protobuf::FieldDescriptorProto const&)
+? google::protobuf::DescriptorBuilder::CrossLinkField(google::protobuf::FieldDescriptor *,google::protobuf::FieldDescriptorProto const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder14CrossLinkFieldEPNS0_15FieldDescriptorERKNS0_20FieldDescriptorProtoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x7C\x03\x00\x00
-? google::protobuf::DescriptorBuilder::CrossLinkMessage(google::protobuf::Descriptor
-  *,google::protobuf::DescriptorProto const&)
+? google::protobuf::DescriptorBuilder::CrossLinkMessage(google::protobuf::Descriptor *,google::protobuf::DescriptorProto const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder16CrossLinkMessageEPNS0_10DescriptorERKNS0_15DescriptorProtoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x68\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x4D\x94
 google::protobuf::DescriptorBuilder::LogUnusedDependency(google::protobuf::FileDescriptor const*):
   mangled: _ZN6google8protobuf17DescriptorBuilder19LogUnusedDependencyEPKNS0_14FileDescriptorE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x50\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xD9\x89\x5D\xA4
-? google::protobuf::DescriptorBuilder::LookupSymbol(std::string const&,std::string
-  const&,google::protobuf::DescriptorBuilder::PlaceholderType,google::protobuf::DescriptorBuilder::ResolveMode)
+? google::protobuf::DescriptorBuilder::LookupSymbol(std::string const&,std::string const&,google::protobuf::DescriptorBuilder::PlaceholderType,google::protobuf::DescriptorBuilder::ResolveMode)
 : mangled: _ZN6google8protobuf17DescriptorBuilder12LookupSymbolERKSsS3_NS1_15PlaceholderTypeENS1_11ResolveModeE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x70\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xC1\x89\x45\x90
-? google::protobuf::DescriptorBuilder::OptionInterpreter::AddWithoutInterpreting(google::protobuf::UninterpretedOption
-  const&,google::protobuf::Message *)
+? google::protobuf::DescriptorBuilder::OptionInterpreter::AddWithoutInterpreting(google::protobuf::UninterpretedOption const&,google::protobuf::Message *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreter22AddWithoutInterpretingERKNS0_19UninterpretedOptionEPNS0_7MessageE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x54\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x45\x08
-? google::protobuf::DescriptorBuilder::OptionInterpreter::ExamineIfOptionIsSet(__gnu_cxx::__normal_iterator<google::protobuf::FieldDescriptor
-  const* const*,std::vector<google::protobuf::FieldDescriptor const*,std::allocator<google::protobuf::FieldDescriptor
-  const*>>>,__gnu_cxx::__normal_iterator<google::protobuf::FieldDescriptor const*
-  const*,std::vector<google::protobuf::FieldDescriptor const*,std::allocator<google::protobuf::FieldDescriptor
-  const*>>>,google::protobuf::FieldDescriptor const*,std::string const&,google::protobuf::UnknownFieldSet
-  const&)
+? google::protobuf::DescriptorBuilder::OptionInterpreter::ExamineIfOptionIsSet(__gnu_cxx::__normal_iterator<google::protobuf::FieldDescriptor const* const*,std::vector<google::protobuf::FieldDescriptor const*,std::allocator<google::protobuf::FieldDescriptor const*>>>,__gnu_cxx::__normal_iterator<google::protobuf::FieldDescriptor const* const*,std::vector<google::protobuf::FieldDescriptor const*,std::allocator<google::protobuf::FieldDescriptor const*>>>,google::protobuf::FieldDescriptor const*,std::string const&,google::protobuf::UnknownFieldSet const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreter20ExamineIfOptionIsSetEN9__gnu_cxx17__normal_iteratorIPKPKNS0_15FieldDescriptorESt6vectorIS7_SaIS7_EEEESD_S7_RKSsRKNS0_15UnknownFieldSetE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x78\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x4D\x80
 google::protobuf::DescriptorBuilder::OptionInterpreter::InterpretSingleOption(google::protobuf::Message *):
@@ -8856,56 +8809,43 @@ google::protobuf::DescriptorBuilder::OptionInterpreter::InterpretSingleOption(go
 google::protobuf::DescriptorBuilder::OptionInterpreter::OptionInterpreter(google::protobuf::DescriptorBuilder*):
   mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreterC2EPS1_
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x34\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF1\x89\x75\xC4
-? google::protobuf::DescriptorBuilder::OptionInterpreter::SetAggregateOption(google::protobuf::FieldDescriptor
-  const*,google::protobuf::UnknownFieldSet *)
+? google::protobuf::DescriptorBuilder::OptionInterpreter::SetAggregateOption(google::protobuf::FieldDescriptor const*,google::protobuf::UnknownFieldSet *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreter18SetAggregateOptionEPKNS0_15FieldDescriptorEPNS0_15UnknownFieldSetE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x2C\x01\x00\x00\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF9
-? google::protobuf::DescriptorBuilder::OptionInterpreter::SetInt32(int,int,google::protobuf::FieldDescriptor::Type,google::protobuf::UnknownFieldSet
-  *)
+? google::protobuf::DescriptorBuilder::OptionInterpreter::SetInt32(int,int,google::protobuf::FieldDescriptor::Type,google::protobuf::UnknownFieldSet *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreter8SetInt32EiiNS0_15FieldDescriptor4TypeEPNS0_15UnknownFieldSetE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x2C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x75\x10\x8B\xC6
-? google::protobuf::DescriptorBuilder::OptionInterpreter::SetInt64(int,long long,google::protobuf::FieldDescriptor::Type,google::protobuf::UnknownFieldSet
-  *)
+? google::protobuf::DescriptorBuilder::OptionInterpreter::SetInt64(int,long long,google::protobuf::FieldDescriptor::Type,google::protobuf::UnknownFieldSet *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreter8SetInt64EixNS0_15FieldDescriptor4TypeEPNS0_15UnknownFieldSetE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x2C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56\x57
-? google::protobuf::DescriptorBuilder::OptionInterpreter::SetOptionValue(google::protobuf::FieldDescriptor
-  const*,google::protobuf::UnknownFieldSet *)
+? google::protobuf::DescriptorBuilder::OptionInterpreter::SetOptionValue(google::protobuf::FieldDescriptor const*,google::protobuf::UnknownFieldSet *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreter14SetOptionValueEPKNS0_15FieldDescriptorEPNS0_15UnknownFieldSetE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xF4\x00\x00\x00
-? google::protobuf::DescriptorBuilder::OptionInterpreter::SetUInt32(int,uint,google::protobuf::FieldDescriptor::Type,google::protobuf::UnknownFieldSet
-  *)
+? google::protobuf::DescriptorBuilder::OptionInterpreter::SetUInt32(int,uint,google::protobuf::FieldDescriptor::Type,google::protobuf::UnknownFieldSet *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreter9SetUInt32EijNS0_15FieldDescriptor4TypeEPNS0_15UnknownFieldSetE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x2C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x75\x10\x8B\x4D\x14
-? google::protobuf::DescriptorBuilder::OptionInterpreter::SetUInt64(int,ulong long,google::protobuf::FieldDescriptor::Type,google::protobuf::UnknownFieldSet
-  *)
+? google::protobuf::DescriptorBuilder::OptionInterpreter::SetUInt64(int,ulong long,google::protobuf::FieldDescriptor::Type,google::protobuf::UnknownFieldSet *)
 : mangled: _ZN6google8protobuf17DescriptorBuilder17OptionInterpreter9SetUInt64EiyNS0_15FieldDescriptor4TypeEPNS0_15UnknownFieldSetE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x2C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x75\x14
-? google::protobuf::DescriptorBuilder::ValidateEnumOptions(google::protobuf::EnumDescriptor
-  *,google::protobuf::EnumDescriptorProto const&)
+? google::protobuf::DescriptorBuilder::ValidateEnumOptions(google::protobuf::EnumDescriptor *,google::protobuf::EnumDescriptorProto const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder19ValidateEnumOptionsEPNS0_14EnumDescriptorERKNS0_19EnumDescriptorProtoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xA8\x00\x00\x00\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x8D\x50\xFF\xFF\xFF
-? google::protobuf::DescriptorBuilder::ValidateFieldOptions(google::protobuf::FieldDescriptor
-  *,google::protobuf::FieldDescriptorProto const&)
+? google::protobuf::DescriptorBuilder::ValidateFieldOptions(google::protobuf::FieldDescriptor *,google::protobuf::FieldDescriptorProto const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder20ValidateFieldOptionsEPNS0_15FieldDescriptorERKNS0_20FieldDescriptorProtoE
   signature: \x55\x8B\xEC\x53\x56\x8B\x75\x0C\x8B\xD9\x57\x8B\x7D\x08\x8B\x47\x40
-? google::protobuf::DescriptorBuilder::ValidateFileOptions(google::protobuf::FileDescriptor
-  *,google::protobuf::FileDescriptorProto const&)
+? google::protobuf::DescriptorBuilder::ValidateFileOptions(google::protobuf::FileDescriptor *,google::protobuf::FileDescriptorProto const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder19ValidateFileOptionsEPNS0_14FileDescriptorERKNS0_19FileDescriptorProtoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x64\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x4D\xA0
-? google::protobuf::DescriptorBuilder::ValidateMapKey(google::protobuf::FieldDescriptor
-  *,google::protobuf::FieldDescriptorProto const&)
+? google::protobuf::DescriptorBuilder::ValidateMapKey(google::protobuf::FieldDescriptor *,google::protobuf::FieldDescriptorProto const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder14ValidateMapKeyEPNS0_15FieldDescriptorERKNS0_20FieldDescriptorProtoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xA8\x00\x00\x00\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF9
-? google::protobuf::DescriptorBuilder::ValidateMessageOptions(google::protobuf::Descriptor
-  *,google::protobuf::DescriptorProto const&)
+? google::protobuf::DescriptorBuilder::ValidateMessageOptions(google::protobuf::Descriptor *,google::protobuf::DescriptorProto const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder22ValidateMessageOptionsEPNS0_10DescriptorERKNS0_15DescriptorProtoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xC4\x01\x00\x00\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x8D\x40\xFE\xFF\xFF
-? google::protobuf::DescriptorBuilder::ValidateServiceOptions(google::protobuf::ServiceDescriptor
-  *,google::protobuf::ServiceDescriptorProto const&)
+? google::protobuf::DescriptorBuilder::ValidateServiceOptions(google::protobuf::ServiceDescriptor *,google::protobuf::ServiceDescriptorProto const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder22ValidateServiceOptionsEPNS0_17ServiceDescriptorERKNS0_22ServiceDescriptorProtoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x64\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x4D\xA0
-? google::protobuf::DescriptorBuilder::ValidateSymbolName(std::string const&,std::string
-  const&,google::protobuf::Message const&)
+? google::protobuf::DescriptorBuilder::ValidateSymbolName(std::string const&,std::string const&,google::protobuf::Message const&)
 : mangled: _ZN6google8protobuf17DescriptorBuilder18ValidateSymbolNameERKSsS3_RKNS0_7MessageE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x3C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xD9\x8B\x75\x08
 google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*,int):
@@ -8941,8 +8881,7 @@ google::protobuf::Message::SetCachedSize(int):
 google::protobuf::MessageFactory::InternalRegisterGeneratedFile(char const*,void (*)(std::string const&)):
   mangled: _ZN6google8protobuf14MessageFactory29InternalRegisterGeneratedFileEPKcPFvRKSsE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x3C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56\x50
-? google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(google::protobuf::Descriptor
-  const*,google::protobuf::Message const*)
+? google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(google::protobuf::Descriptor const*,google::protobuf::Message const*)
 : mangled: _ZN6google8protobuf14MessageFactory32InternalRegisterGeneratedMessageEPKNS0_10DescriptorEPKNS0_7MessageE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x3C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56\x57
 google::protobuf::MessageLite::InitializationErrorString(void):
@@ -8957,8 +8896,7 @@ google::protobuf::OneofDescriptor::DebugString(int,std::string *):
 google::protobuf::TextFormat::ParseInfoTree::CreateNested(google::protobuf::FieldDescriptor const*):
   mangled: _ZN6google8protobuf10TextFormat13ParseInfoTree12CreateNestedEPKNS0_15FieldDescriptorE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x3C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x4D\xB8
-? google::protobuf::TextFormat::Parser::MergeUsingImpl(google::protobuf::io::ZeroCopyInputStream
-  *,google::protobuf::Message *,google::protobuf::TextFormat::Parser::ParserImpl *)
+? google::protobuf::TextFormat::Parser::MergeUsingImpl(google::protobuf::io::ZeroCopyInputStream *,google::protobuf::Message *,google::protobuf::TextFormat::Parser::ParserImpl *)
 : mangled: _ZN6google8protobuf10TextFormat6Parser14MergeUsingImplEPNS0_2io19ZeroCopyInputStreamEPNS0_7MessageEPNS2_10ParserImplE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x40\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xD9
 google::protobuf::TextFormat::Parser::ParserImpl::Consume(std::string const&):
@@ -8967,8 +8905,7 @@ google::protobuf::TextFormat::Parser::ParserImpl::Consume(std::string const&):
 google::protobuf::TextFormat::Parser::ParserImpl::ConsumeField(google::protobuf::Message *):
   mangled: _ZN6google8protobuf10TextFormat6Parser10ParserImpl12ConsumeFieldEPNS0_7MessageE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xE4\x00\x00\x00
-? google::protobuf::TextFormat::Parser::ParserImpl::ConsumeFieldValue(google::protobuf::Message
-  *,google::protobuf::Reflection const*,google::protobuf::FieldDescriptor const*)
+? google::protobuf::TextFormat::Parser::ParserImpl::ConsumeFieldValue(google::protobuf::Message *,google::protobuf::Reflection const*,google::protobuf::FieldDescriptor const*)
 : mangled: _ZN6google8protobuf10TextFormat6Parser10ParserImpl17ConsumeFieldValueEPNS0_7MessageEPKNS0_10ReflectionEPKNS0_15FieldDescriptorE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x1C\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xD9\x83\x7B\x14\x05
 google::protobuf::TextFormat::Parser::ParserImpl::ConsumeIdentifier(std::string *):
@@ -9001,32 +8938,25 @@ google::protobuf::internal::DefaultLogHandler(google::protobuf::LogLevel,char co
 google::protobuf::internal::DescriptorPoolExtensionFinder::Find(int,google::protobuf::internal::ExtensionInfo *):
   mangled: _ZN6google8protobuf8internal29DescriptorPoolExtensionFinder4FindEiPNS1_13ExtensionInfoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x34\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x89\x4D\xC4
-? google::protobuf::internal::ExtensionSet::AddMessage(google::protobuf::FieldDescriptor
-  const*,google::protobuf::MessageFactory *)
+? google::protobuf::internal::ExtensionSet::AddMessage(google::protobuf::FieldDescriptor const*,google::protobuf::MessageFactory *)
 : mangled: _ZN6google8protobuf8internal12ExtensionSet10AddMessageEPKNS0_15FieldDescriptorEPNS0_14MessageFactoryE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x38\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x7D\x08
-? google::protobuf::internal::ExtensionSet::RegisterEnumExtension(google::protobuf::MessageLite
-  const*,int,uchar,bool,bool,bool (*)(int))
+? google::protobuf::internal::ExtensionSet::RegisterEnumExtension(google::protobuf::MessageLite const*,int,uchar,bool,bool,bool (*)(int))
 : mangled: _ZN6google8protobuf8internal12ExtensionSet21RegisterEnumExtensionEPKNS0_11MessageLiteEihbbPFbiE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x40\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x50
 google::protobuf::internal::ExtensionSet::RegisterExtension(google::protobuf::MessageLite const*,int,uchar,bool,bool):
   mangled: _ZN6google8protobuf8internal12ExtensionSet17RegisterExtensionEPKNS0_11MessageLiteEihbb
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x64\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x50
-? google::protobuf::internal::GeneratedMessageReflection::ClearField(google::protobuf::Message
-  *,google::protobuf::FieldDescriptor const*)
+? google::protobuf::internal::GeneratedMessageReflection::ClearField(google::protobuf::Message *,google::protobuf::FieldDescriptor const*)
 : mangled: _ZNK6google8protobuf8internal26GeneratedMessageReflection10ClearFieldEPNS0_7MessageEPKNS0_15FieldDescriptorE
   signature: \x55\x8B\xEC\x51\x53\x56\x8B\x75\x08\x8B\xD9\x57\x8B\x7D\x0C
-? google::protobuf::internal::GeneratedMessageReflection::MutableRawRepeatedField(google::protobuf::Message
-  *,google::protobuf::FieldDescriptor const*,google::protobuf::FieldDescriptor::CppType,int,google::protobuf::Descriptor
-  const*)
+? google::protobuf::internal::GeneratedMessageReflection::MutableRawRepeatedField(google::protobuf::Message *,google::protobuf::FieldDescriptor const*,google::protobuf::FieldDescriptor::CppType,int,google::protobuf::Descriptor const*)
 : mangled: _ZNK6google8protobuf8internal26GeneratedMessageReflection23MutableRawRepeatedFieldEPNS0_7MessageEPKNS0_15FieldDescriptorENS5_7CppTypeEiPKNS0_10DescriptorE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x40\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF1\x89\x75\xBC
 google::protobuf::internal::GeneratedMessageReflection::Swap(google::protobuf::Message *,google::protobuf::Message *):
   mangled: _ZNK6google8protobuf8internal26GeneratedMessageReflection4SwapEPNS0_7MessageES4_
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x44\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF1\x8B\x4D\x08
-? google::protobuf::internal::GeneratedMessageReflection::SwapFields(google::protobuf::Message
-  *,google::protobuf::Message *,std::vector<google::protobuf::FieldDescriptor const*,std::allocator<google::protobuf::FieldDescriptor
-  const*>> const&)
+? google::protobuf::internal::GeneratedMessageReflection::SwapFields(google::protobuf::Message *,google::protobuf::Message *,std::vector<google::protobuf::FieldDescriptor const*,std::allocator<google::protobuf::FieldDescriptor const*>> const&)
 : mangled: _ZNK6google8protobuf8internal26GeneratedMessageReflection10SwapFieldsEPNS0_7MessageES4_RKSt6vectorIPKNS0_15FieldDescriptorESaIS8_EE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x50\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xD9\x8B\x45\x10
 google::protobuf::internal::ReflectionOps::Merge(google::protobuf::Message const&,google::protobuf::Message*):
@@ -9038,25 +8968,19 @@ google::protobuf::internal::VerifyVersion(int,int,char const*):
 google::protobuf::internal::VersionString(int):
   mangled: _ZN6google8protobuf8internal13VersionStringEi
   signature: \x55\x8B\xEC\x81\xEC\x88\x00\x00\x00\xA1\x2A\x2A\x2A\x2A
-? google::protobuf::internal::WireFormat::SerializeWithCachedSizes(google::protobuf::Message
-  const&,int,google::protobuf::io::CodedOutputStream *)
+? google::protobuf::internal::WireFormat::SerializeWithCachedSizes(google::protobuf::Message const&,int,google::protobuf::io::CodedOutputStream *)
 : mangled: _ZN6google8protobuf8internal10WireFormat24SerializeWithCachedSizesERKNS0_7MessageEiPNS0_2io17CodedOutputStreamE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x50\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x5D\x08
-? google::protobuf::internal::`anonymous namespace'::Register(google::protobuf::MessageLite
-  const*,int,google::protobuf::internal::ExtensionInfo)
+? google::protobuf::internal::`anonymous namespace'::Register(google::protobuf::MessageLite const*,int,google::protobuf::internal::ExtensionInfo)
 : mangled: _ZN6google8protobuf8internal12_GLOBAL__N_18RegisterEPKNS0_11MessageLiteEiNS1_13ExtensionInfoE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x78\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x56
-? google::protobuf::internal::`anonymous namespace'::ReportReflectionUsageEnumTypeError(google::protobuf::Descriptor
-  const*,google::protobuf::FieldDescriptor const*,char const*,google::protobuf::EnumValueDescriptor
-  const*)
+? google::protobuf::internal::`anonymous namespace'::ReportReflectionUsageEnumTypeError(google::protobuf::Descriptor const*,google::protobuf::FieldDescriptor const*,char const*,google::protobuf::EnumValueDescriptor const*)
 : mangled: _ZN6google8protobuf8internal12_GLOBAL__N_1L34ReportReflectionUsageEnumTypeErrorEPKNS0_10DescriptorEPKNS0_15FieldDescriptorEPKcPKNS0_19EnumValueDescriptorE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x30\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x45\x10\x8D\x4D\xCC\x8B\x5D\x08\x8B\x7D\x0C
-? google::protobuf::internal::`anonymous namespace'::ReportReflectionUsageError(google::protobuf::Descriptor
-  const*,google::protobuf::FieldDescriptor const*,char const*,char const*)
+? google::protobuf::internal::`anonymous namespace'::ReportReflectionUsageError(google::protobuf::Descriptor const*,google::protobuf::FieldDescriptor const*,char const*,char const*)
 : mangled: _ZN6google8protobuf8internal12_GLOBAL__N_126ReportReflectionUsageErrorEPKNS0_10DescriptorEPKNS0_15FieldDescriptorEPKcSA_
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x30\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x45\x10\x8D\x4D\xCC\x8B\x5D\x08\x8B\x75\x0C
-? google::protobuf::internal::`anonymous namespace'::ReportReflectionUsageTypeError(google::protobuf::Descriptor
-  const*,google::protobuf::FieldDescriptor const*,char const*,google::protobuf::FieldDescriptor::CppType)
+? google::protobuf::internal::`anonymous namespace'::ReportReflectionUsageTypeError(google::protobuf::Descriptor const*,google::protobuf::FieldDescriptor const*,char const*,google::protobuf::FieldDescriptor::CppType)
 : mangled: _ZN6google8protobuf8internal12_GLOBAL__N_1L30ReportReflectionUsageTypeErrorEPKNS0_10DescriptorEPKNS0_15FieldDescriptorEPKcNS6_7CppTypeE
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x30\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x45\x10\x8D\x4D\xCC\x8B\x7D\x08
 google::protobuf::io::CodedInputStream::~CodedInputStream():
@@ -9098,12 +9022,7 @@ google::protobuf::io::ZeroCopyOutputStream::WriteAliasedRaw(void const*,int):
 google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto(void):
   mangled: _ZN6google8protobuf55protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eprotoEv
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x51\x56\xA1\x2A\x2A\x2A\x2A\x33\xC5\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x80\x3D\x2A\x2A\x2A\x2A\x00
-? google::protobuf::strings::SubstituteAndAppend(std::string *,char const*,google::protobuf::strings::internal::SubstituteArg
-  const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg
-  const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg
-  const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg
-  const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg
-  const&,google::protobuf::strings::internal::SubstituteArg const&)
+? google::protobuf::strings::SubstituteAndAppend(std::string *,char const*,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&,google::protobuf::strings::internal::SubstituteArg const&)
 : mangled: _ZN6google8protobuf7strings19SubstituteAndAppendEPSsPKcRKNS1_8internal13SubstituteArgES8_S8_S8_S8_S8_S8_S8_S8_S8_
   signature: \x55\x8B\xEC\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xA8\x00\x00\x00\xA1\x2A\x2A\x2A\x2A\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x45\x08
 hammer_update_safe_entities(CCommand const&):
