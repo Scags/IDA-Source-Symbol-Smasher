@@ -41,15 +41,16 @@ def main():
 				continue
 
 			# Gotta love python 2
-			key, val = node.items()[0]
+			key, mangled = node.items()[0]
 			dump[key] = funcname
 
 			funcstart = func.start_ea
-			idc.set_name(funcstart, str(key), idaapi.SN_FORCE)
+			idc.set_name(funcstart, str(mangled), idaapi.SN_FORCE)
 #			print("Setting {} to {}".format(funcname, key))
 
-	with open("dump.json", "w") as f:
-		json.dump(dump, f, ensure_ascii = False, indent = 4, separators = (",", ":"))
+	if len(dump.items()):
+		with open("dump.json", "w") as f:
+			json.dump(dump, f, ensure_ascii = False, indent = 4, separators = (",", ":"))
 
 
 if __name__ == "__main__":
