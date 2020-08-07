@@ -6,6 +6,7 @@ import json
 import ida_kernwin
 import ida_ua
 import ida_fixup
+from math import floor
 
 MAX_SIG_LENGTH = 512
 
@@ -35,10 +36,10 @@ def print_wildcards(count):
 def is_good_sig(sig):
 	count = 0
 	addr = 0
-	addr = find_binary(addr, idc.SEARCH_DOWN|idc.SEARCH_NEXT, sig)
+	addr = idc.find_binary(addr, idc.SEARCH_DOWN|idc.SEARCH_NEXT, sig)
 	while count <= 2 and addr != idc.BADADDR:
 		count = count + 1
-		addr = find_binary(addr, idc.SEARCH_DOWN|idc.SEARCH_NEXT, sig)
+		addr = idc.find_binary(addr, idc.SEARCH_DOWN|idc.SEARCH_NEXT, sig)
 
 	return count == 1
 
@@ -111,7 +112,7 @@ def makesig(func):
 def main():
 	f = open("data.json", "r")
 	if f is None:
-		print("I don't have a data folder! Run ida_reader.py within a linux project first")
+		ida_kerwin.warning("I don't have a data folder! Run ida_reader.py within a linux project first")
 		return
 
 	root = json.load(f)
@@ -124,6 +125,7 @@ def main():
 		print("???")
 		return
 
+	ida_kernwin.show_wait_box("Iterating Strings")
 	for s in idautils.Strings():
 		node = root.get(str(s), None)
 		if node is None:
@@ -162,6 +164,7 @@ def main():
 		yn = ida_kernwin.ask_yn(0, "Do you wish to generate signatures from the found functions? (VERY LOOONG) ")
 		if yn:
 			try:
+				sigcount = 0
 				count = 0
 				numitems = len(dump.items())
 				starttime = time.time()
@@ -170,11 +173,15 @@ def main():
 					sig = makesig(func)
 					value["signature"] = sig
 
+					sigcount += (0 if "!" in sig else 1)
+
 					count = count + 1
-					print("Evaluated {} out of {} ({}%)".format(count, numitems, round(count / float(numitems) * 100.0, 1)))
+					ida_kernwin.replace_wait_box("Evaluated {} out of {} ({}%)".format(count, numitems, floor(count / float(numitems) * 100.0 * 10.0) / 10.0))
+				print("Successfully evaluated {} signatures from {} functions".format(sigcount, len(dump.items())))
 			except KeyboardInterrupt:	# Eh, this doesn't do anything. Once you start, there's no going back
 				print("Abandoning everything and dumping current data")
 
+		ida_kernwin.hide_wait_box()
 		for key, value in dump.iteritems():
 			try:
 				del value["func"]
