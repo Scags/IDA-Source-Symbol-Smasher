@@ -112,7 +112,7 @@ def makesig(func):
 def main():
 	f = open("data.json", "r")
 	if f is None:
-		ida_kerwin.warning("I don't have a data folder! Run ida_reader.py within a linux project first")
+		ida_kernwin.warning("I don't have a data folder! Run ida_reader.py within a linux project first")
 		return
 
 	root = json.load(f)
@@ -173,7 +173,8 @@ def main():
 					sig = makesig(func)
 					value["signature"] = sig
 
-					sigcount += (0 if "!" in sig else 1)
+					if sig:
+						sigcount += (0 if "!" in sig else 1)
 
 					count = count + 1
 					ida_kernwin.replace_wait_box("Evaluated {} out of {} ({}%)".format(count, numitems, floor(count / float(numitems) * 100.0 * 10.0) / 10.0))

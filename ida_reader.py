@@ -22,6 +22,7 @@ def main():
 			root[str(s)][demangled] = funcname
 
 	with open("data.json", "w") as f:
+		print("Dumping {} strings to data.json".format(len(root.items())))
 		json.dump(root, f, ensure_ascii = False, indent = 4, separators = (",", ":"))
 
 if __name__ == "__main__":
