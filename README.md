@@ -16,4 +16,4 @@ In order for this to work, you must have your projects in the same folder. (Or m
 
 Note that signatures are not guaranteed to be correct! It is unpredictable how Linux functionality (mainly inlining) translates to Windows.
 
-You will be prompted to choose to dump all possible signatures into a dump.json, but this will take a long time (took ~40 minutes for me). I've already provided a TF2 dump.
+You will be prompted to choose to dump all possible signatures into a dump.json, but this will take a long time (took ~40 minutes for me). I've provided a few dumps both in the repo and [here](https://brewcrew.tf/sigdump/).
