@@ -25,7 +25,7 @@ def get_file(action):
 	return open(f, rw) if f else None
 
 # Show how many functions we've found
-FOUND_FUNCS = 0
+FOUND_FUNCS = {}
 # Don't update asap as that throttles script speed, split sec is fine ig
 UPDATE_TIME = time()
 def update_window(activity, hidefuncs = False):
@@ -33,7 +33,7 @@ def update_window(activity, hidefuncs = False):
 	if not hidefuncs:
 		currtime = time()
 		if currtime - UPDATE_TIME > 0.2:
-			activity += "\nFunctions found: {}".format(FOUND_FUNCS)
+			activity += "\nFunctions found: {}".format(len(FOUND_FUNCS))
 			UPDATE_TIME = currtime
 		else:
 			return
@@ -144,18 +144,18 @@ def write_uniques(strings, uniques):
 	for key, value in strdict.iteritems():
 		if uniques.get(key):
 			if len(value) == 2:		# ea + 1 xref
-				func = list(idautils.XrefsTo(value["ea"]))[0].frm
+				r = list(idautils.XrefsTo(value["ea"]))
+				func = r[0].frm
 				funcname = ida_funcs.get_func_name(func)
 
 				# No repeats
-				if funcname is None or not funcname.startswith("sub_") or inserted.has_key(funcname):
+				if funcname is None or not funcname.startswith("sub_") or FOUND_FUNCS.has_key(uniques[key]):
 					continue
 
 #				del value["ea"]		# Not an ordered dict so we dance around that
 				idc.set_name(ida_funcs.get_func(func).start_ea, uniques[key], idaapi.SN_FORCE)
-				inserted[funcname] = 1
 
-				FOUND_FUNCS += 1
+				FOUND_FUNCS[uniques[key]] = 1
 				update_window("Writing unique instances")
 
 	# Build it again so the renamed funcs are updated
@@ -177,16 +177,17 @@ def write_simple_comp(funcdict, subdict, eadict):
 	# Stripped strings have the rightaway
 	for strippedname, strippeddict in subdict.iteritems():
 		possibilities = [symname for symname, symdict in funcdict.iteritems() if strippeddict.items() == symdict.items()]
-		if len(possibilities) == 1:
+		if len(possibilities) == 1 and not FOUND_FUNCS.has_key(possibilities[0]):
 			idc.set_name(eadict[strippedname], possibilities[0], idaapi.SN_FORCE)
 			count += 1
 
-			FOUND_FUNCS += 1
+			FOUND_FUNCS[possibilities[0]] = 1
 			update_window("Writing simple comparisons")
 
 	return count
 
 def write_symbols(strings, file):
+	update_window("Loading file", True)
 	funcdict = yaml.safe_load(file)
 	if not funcdict:
 		ida_kernwin.warning("Could not load function data from file")
@@ -234,7 +235,7 @@ def main():
 	else:
 		global FOUND_FUNCS
 		write_symbols(strings, file)
-		print("Successfully typed {} functions".format(FOUND_FUNCS))
+		print("Successfully typed {} functions".format(len(FOUND_FUNCS)))
 
 	ida_kernwin.hide_wait_box()
 	file.close()
