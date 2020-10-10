@@ -4,12 +4,12 @@ import idaapi
 import yaml
 
 from time import time
+from sys import version_info
 
 # Are we reading this DB or writing to it. Not to be confused with reading from/writing to the work file
 Mode_Invalid = -1
 Mode_Write = 0
 Mode_Read = 1
-
 
 def get_action():
 	return ida_kernwin.ask_buttons("Reading from", "Writing to", "", 0, "What action are we performing on this database?")
@@ -55,61 +55,46 @@ def get_strs():
 # Format:
 # "String Name":
 # {
-# 	"_ZN8Function5Name": refcount,
-# 	"_ZN8Function6Name2": refcount
+# 	"_ZN8Function5Name",
+# 	"_ZN8Function6Name2",
 # 	etc...
 # }
-def build_xref_dict(strings, addr = False):
+def build_xref_dict(strings):
 	xrefs = {}
 	for s in strings:
-		xrefs[str(s)] = {}
-		if addr:
-			xrefs[str(s)]["ea"] = s.ea
+		xrefs[str(s)] = []
+#		if addr:
+#			xrefs[str(s)].append = s.ea
 
-		xcount = 0
 		for xref in idautils.XrefsTo(s.ea):
 			funcname = ida_funcs.get_func_name(xref.frm)
 			if funcname is None:
 				continue
 
-			xcount += 1
-#			demangled = idc.demangle_name(funcname, idc.get_inf_attr(idc.INF_SHORT_DN))
-#			if demangled is None:
-#				demangled = funcname
-
-			xrefs[str(s)][funcname] = xrefs[str(s)].get(funcname, 0) + 1
+			node = xrefs[str(s)]
+			node.append(funcname)
+			xrefs[str(s)] = node
 
 		# Empty, trash, we don't want it
-		if not xcount:
+		if not len(xrefs[str(s)]):
 			del xrefs[str(s)]
 
 	return xrefs
 
 # Format:
-# "Functions":
+# "_ZN8Function5Name":
 # {
-# 	"_ZN8Function5Name":
-# 	{
-# 		"str1": xrefcount,
-# 		"str2": xrefcount,
-# 		"str3": xrefcount
-# 	}
-# }
-# "Uniques":
-# {
-# 	"very_unique_string": "_ZN8Function6Name2"
+# 	"str1",
+# 	"str2",
+# 	"str1",
 # }
 def build_data_dict(strdict):
-	funcs = {"Functions": {}, "Uniques":{}}
-	for s, value in strdict.iteritems():
-		# One, single xref, this is an absolute success for this function
-		if len(value) == 1:
-			funcs["Uniques"][s] = value.keys()[0]
-
-		for funcname, refcount in value.iteritems():
-			node = funcs["Functions"].get(funcname, {})
-			node[s] = refcount
-			funcs["Functions"][funcname] = node
+	funcs = {}
+	for s, value in get_bcompat_iter(strdict):
+		for funcname in value:
+			node = funcs.get(funcname, [])
+			node.append(s)
+			funcs[funcname] = node
 	return funcs
 
 def read_strs(strings, file):
@@ -133,58 +118,140 @@ def get_func_direct_name(ea):
 
 	return demangled
 
-def write_uniques(strings, uniques):
-	global FOUND_FUNCS
+#def write_uniques(strings, uniques):
+#	global FOUND_FUNCS
+#
+#	strdict = build_xref_dict(strings, True)
+#	update_window("Writing unique instances")
+#
+#	# Keep track of what we write so A: we don't pointlessly overwrite anything and B: don't duplicate anything
+#	inserted = {}
+#	for key, value in get_bcompat_iter(strdict):
+#		if uniques.get(key):
+#			if len(value) == 2:		# ea + 1 xref
+#				r = list(idautils.XrefsTo(value["ea"]))
+#				func = r[0].frm
+#				funcname = ida_funcs.get_func_name(func)
+#
+#				# No repeats
+#				if funcname is None or not funcname.startswith("sub_") or FOUND_FUNCS.has_key(uniques[key]):
+#					continue
+#
+##				del value["ea"]		# Not an ordered dict so we dance around that
+#				idc.set_name(ida_funcs.get_func(func).start_ea, uniques[key], idaapi.SN_FORCE)
+#
+#				FOUND_FUNCS[uniques[key]] = 1
+#				update_window("Writing unique instances")
+#
+#	# Build it again so the renamed funcs are updated
+#	return build_xref_dict(strings)
 
-	strdict = build_xref_dict(strings, True)
-	update_window("Writing unique instances")
+def get_bcompat_iter(d):
+	return d.items() if version_info[0] >= 3 else d.iteritems()
 
-	# Keep track of what we write so A: we don't pointlessly overwrite anything and B: don't duplicate anything
-	inserted = {}
-	for key, value in strdict.iteritems():
-		if uniques.get(key):
-			if len(value) == 2:		# ea + 1 xref
-				r = list(idautils.XrefsTo(value["ea"]))
-				func = r[0].frm
-				funcname = ida_funcs.get_func_name(func)
-
-				# No repeats
-				if funcname is None or not funcname.startswith("sub_") or FOUND_FUNCS.has_key(uniques[key]):
-					continue
-
-#				del value["ea"]		# Not an ordered dict so we dance around that
-				idc.set_name(ida_funcs.get_func(func).start_ea, uniques[key], idaapi.SN_FORCE)
-
-				FOUND_FUNCS[uniques[key]] = 1
-				update_window("Writing unique instances")
-
-	# Build it again so the renamed funcs are updated
-	return build_xref_dict(strings)
+def get_bcompat_keys(d):
+	return d.keys() if version_info[0] >= 3 else d.iterkeys()
 
 def clean_symboled_funcs(subdict):
-	return {key: subdict[key] for key in subdict.iterkeys() if key.startswith("sub_")}
+	return {key: subdict[key] for key in get_bcompat_keys(subdict) if key.startswith("sub_")}
 
-def write_simple_comp(funcdict, subdict, eadict):
-	# First we should go through our funcdicts and give them an xref count, will speed things up
-#	for key, value in funcdict.iteritems():
-#		funcdict[key]["RefCount"] = sum(value.values())
-#	for key, value in subdict.iteritems():
-#		subdict[key]["RefCount"] = sum(value.values())
-
+def write_exact_comp(strings, funcdict):
 	global FOUND_FUNCS
-	update_window("Writing simple comparisons")
+	update_window("Writing exact comparisons")
+	subdict, eadict = build_dicts(strings)
 	count = 0
-	# Stripped strings have the rightaway
-	for strippedname, strippeddict in subdict.iteritems():
-		possibilities = [symname for symname, symdict in funcdict.iteritems() if strippeddict.items() == symdict.items()]
-		if len(possibilities) == 1 and not FOUND_FUNCS.has_key(possibilities[0]):
+
+	for strippedname, strippedlist in get_bcompat_iter(subdict):
+		possibilities = []
+		strippedlist = sorted(strippedlist)
+		for symname, symlist in get_bcompat_iter(funcdict):
+			if strippedlist == sorted(symlist):
+				possibilities.append(symname)
+			else:
+				continue
+
+			if len(possibilities) >= 2:
+				break
+
+		if len(possibilities) != 1:
+			continue
+
+		if not FOUND_FUNCS.has_key(possibilities[0]):
 			idc.set_name(eadict[strippedname], possibilities[0], idaapi.SN_FORCE)
 			count += 1
 
 			FOUND_FUNCS[possibilities[0]] = 1
-			update_window("Writing simple comparisons")
+			update_window("Writing exact comparisons")
 
 	return count
+
+def write_simple_comp_liw(strings, funcdict):
+	global FOUND_FUNCS
+	update_window("Writing simple comparisons (symboled in stripped)")
+	subdict, eadict = build_dicts(strings)
+	count = 0
+
+	for strippedname, strippedlist in get_bcompat_iter(subdict):
+		possibilities = []
+		for symname, symlist in get_bcompat_iter(funcdict):
+			if all(val in strippedlist for val in symlist):
+				possibilities.append(symname)
+			else:
+				continue
+
+			if len(possibilities) >= 2:
+				break
+
+		if len(possibilities) != 1:
+			continue
+
+		if not FOUND_FUNCS.has_key(possibilities[0]):
+			idc.set_name(eadict[strippedname], possibilities[0], idaapi.SN_FORCE)
+			count += 1
+
+			FOUND_FUNCS[possibilities[0]] = 1
+			update_window("Writing simple comparisons (symboled in stripped)")
+
+	return count
+
+def write_simple_comp_wil(strings, funcdict):
+	global FOUND_FUNCS
+	update_window("Writing simple comparisons (stripped in symboled)")
+	subdict, eadict = build_dicts(strings)
+	count = 0
+
+	for strippedname, strippedlist in get_bcompat_iter(subdict):
+		possibilities = []
+		for symname, symlist in get_bcompat_iter(funcdict):
+			if all(val in symlist for val in strippedlist):
+				possibilities.append(symname)
+			else:
+				continue
+
+			if len(possibilities) >= 2:
+				break
+
+		if len(possibilities) != 1:
+			continue
+
+		if not FOUND_FUNCS.has_key(possibilities[0]):
+			idc.set_name(eadict[strippedname], possibilities[0], idaapi.SN_FORCE)
+			count += 1
+
+			FOUND_FUNCS[possibilities[0]] = 1
+			update_window("Writing simple comparisons (stripped in symboled)")
+
+	return count
+
+def build_dicts(strings):
+	strdict = build_xref_dict(strings)
+
+	# Build a funcdict for the stripped bin to compare with the symboled one
+	strippeddict = build_data_dict(strdict)
+	subdict = clean_symboled_funcs(strippeddict)
+	eadict = {ida_funcs.get_func_name(ea): ea for ea in idautils.Functions() if ida_funcs.get_func_name(ea).startswith("sub_")}
+	return subdict, eadict
+
 
 def write_symbols(strings, file):
 	update_window("Loading file", True)
@@ -193,21 +260,23 @@ def write_symbols(strings, file):
 		ida_kernwin.warning("Could not load function data from file")
 		return
 
-	# Do the easy ones first, run through the unique instances and send them over
-	strdict = write_uniques(strings, funcdict["Uniques"])
+	# Writing uniques is much more liable to produce bad typing
+	# Unique, one-off strings seem to be inlined much more often, so it's
+	# better to use the simple comparison technique
+	# This will reduce the amount of types, but the reduced types
+	# wouldve been wrong or duplicated anyways
+#	strdict = write_uniques(strings, funcdict["Uniques"])
 
-	# Shitting on memory to optimize performance, nergal would be proud
-	funcdict = funcdict["Functions"]
-	
-	# Build a funcdict for the stripped bin to compare with the symboled one
-	strippeddict = build_data_dict(strdict)["Functions"]
-	subdict = clean_symboled_funcs(strippeddict)
-	eadict = {ida_funcs.get_func_name(ea): ea for ea in idautils.Functions() if ida_funcs.get_func_name(ea).startswith("sub_")}
-
-	# A good test 2 is to just simply compare xrefs
+	# A good test is to just simply compare xrefs
 	# If a function references "fizzbuzz" 2 times and "foobar" once and its the only function
 	# that does anything like that, chances are that we found something to smash
-	write_simple_comp(funcdict, subdict, eadict)
+	write_exact_comp(strings, funcdict)
+
+	# Since a lot of functions that have good strings have inlined strings in them, let's just look for containment
+	# If "fizz", "buzz", and "foo" exist in Bar::Foo which has "fizz", "buzz", "foo", and "fizzbuzz" for example
+	# Obviously we're only checking for 1 instance
+	write_simple_comp_liw(strings, funcdict)
+	write_simple_comp_wil(strings, funcdict)
 
 	# TODO IDEAS;
 	# -	Dance around some function xrefs. By now, a solid chunk of them should have symboled names (a few thousand at least)
