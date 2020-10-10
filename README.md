@@ -15,11 +15,11 @@ This works well with the [Signature Smasher](https://github.com/Scags/IDA-Script
 
 # How it Works #
 
-Currently, writing function data opts for 2 methods, both of which revolve around strings.
+Currently, writing function data opts for simple comparison methods that revolve around strings.
 
-The first is a unique string comparison. If a string has a unique xref(s) to a single function on Linux, then the same string on Windows should have the same reference and thus the Windows function can be typed. 
+The first is exact string comparison. If a function has a unique set of strings within it's scope on Linux, then if a function on Windows has the same set of strings, then the unnamed Windows function should be the same as the Linux one.
 
-The second is unique string xref sequences. In the script this is called "Simple Comparisons". If a symboled `Foo::Bar()` references "FizzBuzz" twice and "Foo_Foo" once and is the only function to have those exact references, then a function on Windows with that exact behavior can be typed. "FizzBuzz" and "Foo_Foo" can be used elsewhere, but only `Foo::Bar()` has that kind of sequence.
+The second is unique string xref sequences. In the script this is called "Simple Comparisons". This method checks both directions since inlining can change across both Windows and Linux. A function has a set of strings, and another function can have a subset of those strings. If that subset function is the only function that has a subset of strings contained within the first function, then those functions should be the same. 
 
 #### Planned Typing Methods ####
 
@@ -32,4 +32,4 @@ The second is unique string xref sequences. In the script this is called "Simple
 
 # Caveats #
 
-- Typed functions are not guaranteed to be correct! It is unpredictable how Linux functionality translates over to Windows. Various functions can be inlined and produce incorrect typing. Although this scenario is rare, it can and will happen. In terms of confidence rate, unique comparisons I'll give a 99% and simple comparisons are more of a 95%.
+- Typed functions are not guaranteed to be correct! It is unpredictable how Linux functionality translates over to Windows and vice versa. Various functions can be inlined and produce incorrect typing. Although this scenario is rare, it can and will happen.
