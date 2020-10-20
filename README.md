@@ -23,8 +23,8 @@ The second is unique string xref sequences. In the script this is called "Simple
 
 #### Planned Typing Methods ####
 
-1. VTable Orientation
-	- Finding and reading VTables is simple on Linux, however finding them on Windows is a bit more difficult. It should be straightforward, though.
+1. ~~VTable Orientation~~ [Done with this script](https://github.com/Scags/IDA-Scripts#vtable_iopy)
+	- ~~Finding and reading VTables is simple on Linux, however finding them on Windows is a bit more difficult. It should be straightforward, though.~~ 
 2. Function XRef Sequencing
 	- Similar to the second string method, this can compare xref sequences within functions. This will rely on as many functions as possible being typed, so it should be done last.
 	- In addition to it being last, it can be run again and again to find more unique sequences based on previously typed functions.
