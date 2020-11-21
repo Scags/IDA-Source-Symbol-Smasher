@@ -5,7 +5,9 @@ Seeks strings and succinctly sends symbols to Windows.
 
 Running the script presents 2 options: you can read and export data from the current database, or you can import and write data into it.
 
-Requires PyYAML so you'll need to `pip install pyyaml`.
+~~Requires PyYAML so you'll need to pip install pyyaml~~
+
+No longer uses PyYAML. It instead uses JSON for importing/exporting.
 
 If you're on a symbol library, you should run it in read mode and export it to a file. This file is what is used to import back into a stripped binary.
 
@@ -32,4 +34,4 @@ The second is unique string xref sequences. In the script this is called "Simple
 
 # Caveats #
 
-- Typed functions are not guaranteed to be correct! It is unpredictable how Linux functionality translates over to Windows and vice versa. Various functions can be inlined and produce incorrect typing. Although this scenario is rare, it can and will happen.
+- Typed functions are not guaranteed to be correct! It is unpredictable how Linux functionality translates over to Windows and vice versa. Various functions can be inlined and produce incorrect typing. Although this is uncommon, it can and will happen.
