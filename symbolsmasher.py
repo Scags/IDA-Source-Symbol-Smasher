@@ -11,6 +11,8 @@ Mode_Invalid = -1
 Mode_Write = 0
 Mode_Read = 1
 
+DEBUG = 0
+
 def get_action():
 	return ida_kernwin.ask_buttons("Reading from", "Writing to", "", 0, "What action are we performing on this database?")
 
@@ -109,7 +111,7 @@ def write_exact_comp(strdict, funcdict, myfuncs):
 		strippedlist = sorted(strippedlist)
 		for symname, symlist in get_bcompat_iter(funcdict):
 			if strippedlist == sorted(symlist):
-				possibilities.append(symname)
+				possibilities.append(str(symname))
 			else:
 				continue
 
@@ -126,6 +128,8 @@ def write_exact_comp(strdict, funcdict, myfuncs):
 
 			FOUND_FUNCS.add(possibilities[0])
 			update_window("Writing exact comparisons")
+		elif DEBUG:
+			print("{} is probably wrong!".format(idc.demangle_name(possibilities[0], idc.get_inf_attr(idc.INF_SHORT_DN))))
 
 	return count
 
@@ -143,12 +147,12 @@ def write_simple_comp(strdict, funcdict, myfuncs, liw = True):
 		for symname, symlist in get_bcompat_iter(funcdict):
 			if liw:
 				if all(val in strippedlist for val in symlist):
-					possibilities.append(symname)
+					possibilities.append(str(symname))
 				else:
 					continue
 			else:
 				if all(val in symlist for val in strippedlist):
-					possibilities.append(symname)
+					possibilities.append(str(symname))
 				else:
 					continue
 
@@ -159,11 +163,13 @@ def write_simple_comp(strdict, funcdict, myfuncs, liw = True):
 			continue
 
 		if possibilities[0] not in FOUND_FUNCS and not myfuncs.has_key(possibilities[0]):
-			idc.set_name(myfuncs[strippedname], possibilities[0], ida_name.SN_FORCE)
+			idc.set_name(myfuncs[strippedname], str(possibilities[0]), ida_name.SN_FORCE)
 			count += 1
 
 			FOUND_FUNCS.add(possibilities[0])
 			update_window("Writing simple comparisons ({})".format(s))
+		elif DEBUG:
+			print("{} is probably wrong!".format(idc.demangle_name(possibilities[0], idc.get_inf_attr(idc.INF_SHORT_DN))))
 
 	return count
 
