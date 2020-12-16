@@ -121,7 +121,7 @@ def write_exact_comp(strdict, funcdict, myfuncs):
 		if len(possibilities) != 1:
 			continue
 
-		if possibilities[0] not in FOUND_FUNCS and not myfuncs.has_key(possibilities[0]):
+		if possibilities[0] not in FOUND_FUNCS and possibilities[0] not in myfuncs:
 #			print(ida_funcs.get_func_name(myfuncs[strippedname]))
 			idc.set_name(myfuncs[strippedname], possibilities[0], ida_name.SN_FORCE)
 			count += 1
@@ -162,8 +162,8 @@ def write_simple_comp(strdict, funcdict, myfuncs, liw = True):
 		if len(possibilities) != 1:
 			continue
 
-		if possibilities[0] not in FOUND_FUNCS and not myfuncs.has_key(possibilities[0]):
-			idc.set_name(myfuncs[strippedname], str(possibilities[0]), ida_name.SN_FORCE)
+		if possibilities[0] not in FOUND_FUNCS and possibilities[0] not in myfuncs:
+			idc.set_name(myfuncs[strippedname], possibilities[0], ida_name.SN_FORCE)
 			count += 1
 
 			FOUND_FUNCS.add(possibilities[0])
